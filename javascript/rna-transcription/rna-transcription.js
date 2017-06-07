@@ -1,27 +1,20 @@
 var DnaTranscriber = function (){};
 
 DnaTranscriber.prototype.toRna = function(dna) {
-  let i = 0;
-  let rna = '';
-  while (dna[i]) {
-    switch (dna[i]) {
-      case 'G':
-        rna += 'C';
-        break;
-      case 'C':
-        rna += 'G';
-        break;
-      case 'T':
-        rna += 'A';
-        break;
-      case 'A':
-        rna += 'U';
-        break;
-      default:
-        throw new Error('Invalid input');
-    }
-    i++;
-  }
+  let dnaArray = dna.split("");
+  let rnaArray = dnaArray.map(function(input) {
+    if (input === 'G')
+      return 'C';
+    else if (input === 'C')
+      return 'G';
+    else if (input === 'T')
+      return 'A';
+    else if (input === 'A')
+      return 'U';
+    else
+      throw new Error('Invalid input');
+  });
+  let rna = rnaArray.join("");
   return rna;
 };
 
