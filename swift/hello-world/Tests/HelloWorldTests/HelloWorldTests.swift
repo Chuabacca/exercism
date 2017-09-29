@@ -1,5 +1,4 @@
 import XCTest
-import HelloWorld
 @testable import HelloWorld
 
 class HelloWorldTests: XCTestCase {
