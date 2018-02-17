@@ -26,9 +26,9 @@ class RnaTranscriptionTests: XCTestCase {
         XCTAssertThrowsError(try Nucleotide("U").complementOfDNA())
 
         // Uncomment to see more specific error handling
-//        XCTAssertThrowsError(try Nucleotide("U").complementOfDNA(), "This didn't work") { (error) in
-//            XCTAssertEqual(error as? RnaTranscription.TranscriptionError, RnaTranscription.TranscriptionError.invalidNucleotide)
-//        }
+        XCTAssertThrowsError(try Nucleotide("U").complementOfDNA(), "This didn't work") { (error) in
+            XCTAssertEqual(error as? RnaTranscription.TranscriptionError, RnaTranscription.TranscriptionError.invalidNucleotide)
+        }
     }
 
     func testInvalidRnaComplementOfXXX() {

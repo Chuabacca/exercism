@@ -1,11 +1,12 @@
 //Solution goes in Sources
 
+enum TranscriptionError: Error {
+    case invalidNucleotide
+}
+
 class Nucleotide {
     var rna: String
     var dna: String
-    enum RnaTranscription: Error {
-        case TranscriptionError
-    }
     
     init (_ dnaString: String) {
         rna = ""
@@ -28,7 +29,7 @@ class Nucleotide {
             case "A":
                 nucleotide = "U"
             default:
-                throw RnaTranscription.TranscriptionError
+                throw TranscriptionError.invalidNucleotide
             }
             rna.append(nucleotide)
         }
